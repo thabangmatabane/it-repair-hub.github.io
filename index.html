@@ -1,545 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>IT Repair Hub • Device & IT Solutions</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
-    :root {
-      --primary:   #4361ee;
-      --primary-dark: #3f37c9;
-      --accent:    #4895ef;
-      --light-bg:  #f9fbff;
-      --dark:      #1a1f36;
-      --gray:      #6c757d;
-    }
-
-    body {
-      background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
-      min-height: 100vh;
-      font-family: 'Segoe UI', system-ui, sans-serif;
-      position: relative;
-      color: #1a1f36;
-      overflow-x: hidden;
-    }
-
-    /* Enhanced tech-circuit SVG background */
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background-image: 
-        radial-gradient(circle at 25% 25%, rgba(67,97,238,0.06) 2%, transparent 2%),
-        radial-gradient(circle at 75% 75%, rgba(72,149,239,0.06) 2%, transparent 2%),
-        url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%234361ee' fill-opacity='0.085'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 0c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-85 0c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm85 48c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zM11 66c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48-48c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7z'/%3E%3Cpath d='M50 50l-12-12h24zM50 50l12-12h-24zM38 62l12-12h-24zM62 62l-12-12h24z' opacity='.4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-      background-size: 60px 60px, 80px 80px, 100px 100px;
-      background-position: 0 0, 30px 30px, 0 0;
-      opacity: 0.38;
-      pointer-events: none;
-      z-index: -2;
-    }
-
-    .auth-card {
-      max-width: 480px;
-      margin: 80px auto;
-      padding: 2.8rem 2.5rem;
-      background: rgba(255, 255, 255, 0.91);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-radius: 24px;
-      box-shadow: 0 22px 60px rgba(67, 97, 238, 0.24);
-      border: 1px solid rgba(255,255,255,0.5);
-      transition: all 0.4s ease;
-    }
-
-    .auth-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 35px 80px rgba(67, 97, 238, 0.30);
-    }
-
-    .logo-title {
-      font-weight: 800;
-      font-size: 2.4rem;
-      background: linear-gradient(90deg, #4361ee 0%, #4895ef 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      letter-spacing: -1.2px;
-    }
-
-    .form-control:focus {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 0.3rem rgba(72,149,239,0.18);
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-      border: none;
-      font-weight: 600;
-      border-radius: 12px;
-      padding: 0.85rem;
-      transition: all 0.3s;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 35px rgba(67,97,238,0.45);
-    }
-
-    .card {
-      border: none;
-      border-radius: 18px;
-      overflow: hidden;
-      box-shadow: 0 12px 35px rgba(0,0,0,0.11);
-      transition: all 0.4s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-12px);
-      box-shadow: 0 25px 60px rgba(0,0,0,0.16);
-    }
-
-    .card-header {
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      color: white;
-      font-weight: 600;
-      padding: 1.2rem 1.6rem;
-      border-radius: 18px 18px 0 0;
-    }
-
-    .rating-badge {
-      font-size: 1.05rem;
-      padding: 0.5rem 1.2rem;
-      border-radius: 50px;
-      font-weight: 600;
-    }
-
-    .hidden { display: none !important; }
-    .fade-in { animation: fadeIn 0.75s ease-out forwards; }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(25px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    .alert {
-      border-radius: 12px;
-      margin-bottom: 1.6rem;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedExpress | Medication Delivery Vosloorus & Katlehong</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+    </style>
 </head>
-<body>
+<body class="bg-gray-50 text-gray-800">
 
-  <!-- Login -->
-  <div id="loginPage" class="auth-card fade-in">
-    <h3 class="text-center logo-title mb-2">IT Repair Hub</h3>
-    <p class="text-center text-muted mb-4 fw-light">Professional • Fast • Reliable Device & IT Repair</p>
-
-    <div id="loginError" class="alert alert-danger hidden"></div>
-
-    <form id="loginForm">
-      <div class="mb-3">
-        <label for="loginEmail" class="form-label fw-medium">Email</label>
-        <div class="input-group">
-          <span class="input-group-text"><i class="fas fa-envelope"></i></span>
-          <input type="email" class="form-control" id="loginEmail" placeholder="name@example.com" required>
-        </div>
-      </div>
-      <div class="mb-3">
-        <label for="loginPassword" class="form-label fw-medium">Password</label>
-        <div class="input-group">
-          <span class="input-group-text"><i class="fas fa-lock"></i></span>
-          <input type="password" class="form-control" id="loginPassword" required>
-        </div>
-      </div>
-      <button type="submit" class="btn btn-primary w-100 mb-3">Sign In</button>
-    </form>
-
-    <div class="text-center mt-3">
-      <a href="#" id="forgotPasswordLink" class="text-muted small d-block mb-2">Forgot password?</a>
-      <span>New here? </span>
-      <a href="#" id="goToRegister" class="text-primary fw-medium">Create account</a>
-    </div>
-  </div>
-
-  <!-- Register -->
-  <div id="registerPage" class="auth-card hidden fade-in">
-    <h3 class="text-center logo-title mb-2">Create Account</h3>
-    <p class="text-center text-muted mb-4 fw-light">Join our trusted repair service</p>
-
-    <div id="registerError" class="alert alert-danger hidden"></div>
-    <div id="registerSuccess" class="alert alert-success hidden"></div>
-
-    <form id="registerForm">
-      <div class="mb-3">
-        <label for="regEmail" class="form-label fw-medium">Email</label>
-        <div class="input-group">
-          <span class="input-group-text"><i class="fas fa-envelope"></i></span>
-          <input type="email" class="form-control" id="regEmail" placeholder="name@example.com" required>
-        </div>
-      </div>
-      <div class="mb-3">
-        <label for="regPassword" class="form-label fw-medium">Password</label>
-        <div class="input-group">
-          <span class="input-group-text"><i class="fas fa-lock"></i></span>
-          <input type="password" class="form-control" id="regPassword" required>
-        </div>
-        <div id="passwordStrength" class="form-text mt-2"></div>
-      </div>
-      <button type="submit" class="btn btn-primary w-100 mb-3">Register</button>
-    </form>
-
-    <p class="text-center mt-3">
-      Already have an account? 
-      <a href="#" id="goToLogin" class="text-primary fw-medium">Sign in</a>
-    </p>
-  </div>
-
-  <!-- Reset Password -->
-  <div id="resetPage" class="auth-card hidden fade-in">
-    <h4 class="text-center logo-title mb-3">Reset Password</h4>
-    <p class="text-center text-muted mb-4">Recover your account</p>
-
-    <div id="resetError" class="alert alert-danger hidden"></div>
-    <div id="resetSuccess" class="alert alert-success hidden"></div>
-
-    <form id="resetForm">
-      <div class="mb-3">
-        <label for="resetEmail" class="form-label fw-medium">Your Email</label>
-        <div class="input-group">
-          <span class="input-group-text"><i class="fas fa-envelope"></i></span>
-          <input type="email" class="form-control" id="resetEmail" placeholder="name@example.com" required>
-        </div>
-      </div>
-      <button type="submit" class="btn btn-primary w-100 mb-3">Reset Password</button>
-    </form>
-
-    <p class="text-center mt-3">
-      <a href="#" id="backToLoginFromReset" class="text-muted">← Back to login</a>
-    </p>
-  </div>
-
-  <!-- Dashboard -->
-  <div id="dashboard" class="container mt-5 hidden fade-in">
-    <div class="d-flex justify-content-between align-items-center mb-5">
-      <div>
-        <h2 class="logo-title mb-1">Welcome back</h2>
-        <h5 id="currentUser" class="text-muted fw-light"></h5>
-      </div>
-      <button id="logoutBtn" class="btn btn-outline-danger px-4 py-2">
-        <i class="fas fa-sign-out-alt me-2"></i> Logout
-      </button>
-    </div>
-
-    <h4 class="mb-4 fw-semibold">Repair Service Partners</h4>
-    <div class="row g-4 mb-5" id="companiesList"></div>
-
-    <h4 class="mb-4 fw-semibold">Your Bookings</h4>
-    <div class="card">
-      <div class="card-header">
-        Scheduled Appointments
-      </div>
-      <ul id="myBookings" class="list-group list-group-flush"></ul>
-    </div>
-  </div>
-
-  <script>
-    // ────────────────────────────────────────────────
-    // Data
-    // ────────────────────────────────────────────────
-    const STORAGE_KEY_USERS    = 'itrepair_users_v3';
-    const STORAGE_KEY_BOOKINGS = 'itrepair_bookings';
-    const STORAGE_KEY_RATINGS  = 'itrepair_ratings';
-
-    const companies = [
-      { name: "TechFix Pros",       theme: "primary" },
-      { name: "GadgetCare Elite",   theme: "success" },
-      { name: "IT Saviors",         theme: "info"    },
-      { name: "QuickByte Repairs",  theme: "warning text-dark" },
-      { name: "Device Doctors",     theme: "danger"  }
-    ];
-
-    const slots = [
-      "2026-03-17 09:00", "2026-03-17 11:30", "2026-03-17 14:00", "2026-03-17 16:30",
-      "2026-03-18 10:00", "2026-03-18 13:00", "2026-03-18 15:30", "2026-03-19 09:30",
-      "2026-03-20 10:30", "2026-03-20 14:00", "2026-03-21 11:00", "2026-03-22 09:00"
-    ];
-
-    // ────────────────────────────────────────────────
-    // Storage helpers
-    // ────────────────────────────────────────────────
-    const getUsers    = () => JSON.parse(localStorage.getItem(STORAGE_KEY_USERS)    || '[]');
-    const saveUsers   = u  => localStorage.setItem(STORAGE_KEY_USERS,    JSON.stringify(u));
-    const getBookings = () => JSON.parse(localStorage.getItem(STORAGE_KEY_BOOKINGS) || '[]');
-    const saveBookings= b  => localStorage.setItem(STORAGE_KEY_BOOKINGS, JSON.stringify(b));
-    const getRatings  = () => JSON.parse(localStorage.getItem(STORAGE_KEY_RATINGS)  || '[]');
-    const saveRatings = r  => localStorage.setItem(STORAGE_KEY_RATINGS,  JSON.stringify(r));
-
-    const getCurrentUser = () => localStorage.getItem('itrepair_current_user');
-    const setCurrentUser = u => localStorage.setItem('itrepair_current_user', u);
-    const clearCurrentUser = () => localStorage.removeItem('itrepair_current_user');
-
-    // ────────────────────────────────────────────────
-    // Navigation
-    // ────────────────────────────────────────────────
-    const pages = {
-      login:     document.getElementById('loginPage'),
-      register:  document.getElementById('registerPage'),
-      reset:     document.getElementById('resetPage'),
-      dashboard: document.getElementById('dashboard')
-    };
-
-    function showPage(name) {
-      Object.values(pages).forEach(p => p.classList.add('hidden'));
-      pages[name].classList.remove('hidden');
-    }
-
-    // ────────────────────────────────────────────────
-    // Validation
-    // ────────────────────────────────────────────────
-    function isValidEmail(email) {
-      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    }
-
-    function isStrongPassword(pw) {
-      return pw.length >= 8 &&
-             /[A-Z]/.test(pw) &&
-             /[a-z]/.test(pw) &&
-             /[0-9]/.test(pw) &&
-             /[^A-Za-z0-9]/.test(pw);
-    }
-
-    function getPasswordStrengthText(pw) {
-      if (!pw) return "";
-      if (pw.length < 8)                  return "<span class='text-danger'>Minimum 8 characters</span>";
-      if (!/[A-Z]/.test(pw))              return "<span class='text-warning'>Add uppercase letter</span>";
-      if (!/[a-z]/.test(pw))              return "<span class='text-warning'>Add lowercase letter</span>";
-      if (!/[0-9]/.test(pw))              return "<span class='text-warning'>Add a number</span>";
-      if (!/[^A-Za-z0-9]/.test(pw))       return "<span class='text-warning'>Add special character</span>";
-      return "<span class='text-success fw-medium'>Strong password ✓</span>";
-    }
-
-    // ────────────────────────────────────────────────
-    // Auth logic
-    // ────────────────────────────────────────────────
-    document.getElementById('loginForm').addEventListener('submit', e => {
-      e.preventDefault();
-      const email = document.getElementById('loginEmail').value.trim();
-      const pw    = document.getElementById('loginPassword').value;
-
-      if (!isValidEmail(email)) return showAlert('loginError', 'Invalid email format');
-      
-      const users = getUsers();
-      const user  = users.find(u => u.email === email && u.password === pw);
-
-      if (user) {
-        setCurrentUser(email);
-        showDashboard();
-      } else {
-        showAlert('loginError', 'Incorrect email or password');
-      }
-    });
-
-    document.getElementById('registerForm').addEventListener('submit', e => {
-      e.preventDefault();
-      const email = document.getElementById('regEmail').value.trim();
-      const pw    = document.getElementById('regPassword').value;
-
-      if (!isValidEmail(email))    return showAlert('registerError', 'Invalid email format');
-      if (!isStrongPassword(pw))   return showAlert('registerError', 'Password is not strong enough');
-
-      const users = getUsers();
-      if (users.some(u => u.email === email)) {
-        return showAlert('registerError', 'Email already registered');
-      }
-
-      users.push({ email, password: pw });
-      saveUsers(users);
-
-      showAlert('registerSuccess', 'Account created successfully! You can now sign in.');
-      setTimeout(() => showPage('login'), 1800);
-    });
-
-    document.getElementById('resetForm').addEventListener('submit', e => {
-      e.preventDefault();
-      const email = document.getElementById('resetEmail').value.trim();
-
-      if (!isValidEmail(email)) return showAlert('resetError', 'Invalid email format');
-
-      const users = getUsers();
-      const idx = users.findIndex(u => u.email === email);
-
-      if (idx === -1) return showAlert('resetError', 'Email not found');
-
-      const newPw = prompt("Enter your new strong password:", "");
-      if (!newPw || !isStrongPassword(newPw)) {
-        return showAlert('resetError', 'Reset cancelled — password too weak');
-      }
-
-      users[idx].password = newPw;
-      saveUsers(users);
-
-      showAlert('resetSuccess', 'Password has been reset. Please sign in.');
-      setTimeout(() => showPage('login'), 2200);
-    });
-
-    // ────────────────────────────────────────────────
-    // Event listeners
-    // ────────────────────────────────────────────────
-    document.getElementById('goToRegister').addEventListener('click', e => { e.preventDefault(); showPage('register'); });
-    document.getElementById('goToLogin').addEventListener('click', e => { e.preventDefault(); showPage('login'); });
-    document.getElementById('forgotPasswordLink').addEventListener('click', e => { e.preventDefault(); showPage('reset'); });
-    document.getElementById('backToLoginFromReset').addEventListener('click', e => { e.preventDefault(); showPage('login'); });
-
-    document.getElementById('logoutBtn').addEventListener('click', () => {
-      clearCurrentUser();
-      showPage('login');
-      document.getElementById('loginForm').reset();
-    });
-
-    document.getElementById('regPassword').addEventListener('input', e => {
-      document.getElementById('passwordStrength').innerHTML = getPasswordStrengthText(e.target.value);
-    });
-
-    // ────────────────────────────────────────────────
-    // Dashboard
-    // ────────────────────────────────────────────────
-    function avgRating(company) {
-      const ratings = getRatings().filter(r => r.company === company);
-      return ratings.length ? (ratings.reduce((s, r) => s + r.rating, 0) / ratings.length).toFixed(1) : null;
-    }
-
-    function renderCompanies() {
-      const container = document.getElementById('companiesList');
-      container.innerHTML = '';
-
-      companies.forEach(c => {
-        const rating = avgRating(c.name);
-        const card = document.createElement('div');
-        card.className = 'col-md-6 col-lg-4';
-        card.innerHTML = `
-          <div class="card h-100">
-            <div class="card-body">
-              <h5 class="card-title fw-semibold">${c.name}</h5>
-              <p class="mb-3">
-                ${rating 
-                  ? `<span class="badge bg-${c.theme.split(' ')[0]} rating-badge">★ ${rating} / 5</span>`
-                  : '<span class="text-muted small">No ratings yet</span>'}
-              </p>
-              <div class="d-flex gap-2 flex-wrap">
-                <button class="btn btn-sm btn-primary" onclick="bookSlot('${c.name.replace(/'/g,"\\'")}')">
-                  <i class="fas fa-calendar-check me-1"></i> Book
-                </button>
-                <button class="btn btn-sm btn-outline-secondary" onclick="rateCompany('${c.name.replace(/'/g,"\\'")}')">
-                  <i class="fas fa-star me-1"></i> Rate
-                </button>
-              </div>
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-blue-600 flex items-center">
+                <i class="fas fa-hand-holding-medical mr-2"></i>MedExpress
             </div>
-          </div>
-        `;
-        container.appendChild(card);
-      });
-    }
+            <div class="hidden md:flex space-x-8 font-medium">
+                <a href="#how-it-works" class="hover:text-blue-600">How it Works</a>
+                <a href="#pricing" class="hover:text-blue-600">Pricing</a>
+                <a href="#contact" class="hover:text-blue-600">Contact</a>
+            </div>
+            <a href="https://wa.me/27123456789" class="bg-green-500 text-white px-5 py-2 rounded-full font-bold hover:bg-green-600 transition">
+                <i class="fab fa-whatsapp mr-2"></i>WhatsApp Us
+            </a>
+        </div>
+    </nav>
 
-    function renderBookings() {
-      const user = getCurrentUser();
-      if (!user) return;
+    <!-- Hero Section -->
+    <header class="bg-blue-600 text-white py-20 px-6 text-center">
+        <div class="container mx-auto max-w-4xl">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Skip the Queue at Thelle Mogoerane Hospital</h1>
+            <p class="text-xl mb-8 text-blue-100">We collect your chronic medication and deliver it straight to your door in Vosloorus and Katlehong.</p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <a href="#pricing" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-bold text-lg shadow-lg">View Rates</a>
+                <a href="#contact" class="bg-blue-800 text-white border border-blue-400 px-8 py-3 rounded-lg font-bold text-lg hover:bg-blue-700">Book Collection</a>
+            </div>
+        </div>
+    </header>
 
-      const bookings = getBookings().filter(b => b.user === user);
-      const list = document.getElementById('myBookings');
-      list.innerHTML = bookings.length === 0 
-        ? '<li class="list-group-item text-muted py-4 text-center">No bookings yet</li>'
-        : '';
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-16 container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">Affordable Delivery Rates</h2>
+        <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <!-- Local Rate -->
+            <div class="bg-white p-8 rounded-2xl shadow-sm border-2 border-blue-100 hover:border-blue-500 transition text-center">
+                <h3 class="text-xl font-bold mb-2 text-blue-600">Vosloorus Local</h3>
+                <p class="text-gray-500 mb-4">Areas near Thelle Mogoerane</p>
+                <div class="text-5xl font-bold mb-6 text-gray-900">R50</div>
+                <ul class="text-left space-y-3 mb-8 text-gray-600">
+                    <li><i class="fas fa-check text-green-500 mr-2"></i> All Vosloorus Extensions</li>
+                    <li><i class="fas fa-check text-green-500 mr-2"></i> Spruitview</li>
+                    <li><i class="fas fa-check text-green-500 mr-2"></i> Door-to-door delivery</li>
+                </ul>
+                <button class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold">Select Local</button>
+            </div>
 
-      bookings.forEach(b => {
-        const li = document.createElement('li');
-        li.className = 'list-group-item';
-        li.innerHTML = `
-          <div class="d-flex justify-content-between align-items-center">
+            <!-- Further Areas -->
+            <div class="bg-white p-8 rounded-2xl shadow-sm border-2 border-blue-100 hover:border-blue-500 transition text-center">
+                <h3 class="text-xl font-bold mb-2 text-blue-600">Katlehong & Surrounds</h3>
+                <p class="text-gray-500 mb-4">Nearby surrounding areas</p>
+                <div class="text-5xl font-bold mb-6 text-gray-900">R75</div>
+                <ul class="text-left space-y-3 mb-8 text-gray-600">
+                    <li><i class="fas fa-check text-green-500 mr-2"></i> Katlehong (North/South)</li>
+                    <li><i class="fas fa-check text-green-500 mr-2"></i> Zonkizizwe / Dawn Park</li>
+                    <li><i class="fas fa-check text-green-500 mr-2"></i> Secure & Private handling</li>
+                </ul>
+                <button class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold">Select Surrounds</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it works -->
+    <section id="how-it-works" class="bg-gray-100 py-16 px-6">
+        <div class="container mx-auto max-w-5xl">
+            <h2 class="text-3xl font-bold text-center mb-12">How MedExpress Works</h2>
+            <div class="grid md:grid-cols-3 gap-10">
+                <div class="text-center">
+                    <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">1</div>
+                    <h4 class="font-bold text-lg mb-2">Request</h4>
+                    <p class="text-gray-600">WhatsApp us a photo of your clinic card and address.</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">2</div>
+                    <h4 class="font-bold text-lg mb-2">Collection</h4>
+                    <p class="text-gray-600">We go to Thelle Mogoerane early to collect your parcel.</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">3</div>
+                    <h4 class="font-bold text-lg mb-2">Delivery</h4>
+                    <p class="text-gray-600">We deliver to your home. You pay only when you receive it!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-gray-900 text-white py-12 px-6">
+        <div class="container mx-auto grid md:grid-cols-3 gap-8 border-b border-gray-700 pb-8">
             <div>
-              <strong>${b.company}</strong>
-              <div class="small text-muted">• ${b.slot}</div>
+                <h4 class="text-xl font-bold mb-4">MedExpress</h4>
+                <p class="text-gray-400">Supporting the health of our community in the East Rand since 2024.</p>
             </div>
-            <small class="text-muted">${new Date(b.date).toLocaleDateString()}</small>
-          </div>
-        `;
-        list.appendChild(li);
-      });
-    }
+            <div>
+                <h4 class="text-xl font-bold mb-4">Contact Us</h4>
+                <p class="text-gray-400 font-bold mb-2"><i class="fas fa-phone mr-2"></i> 011 234 5678</p>
+                <p class="text-gray-400"><i class="fas fa-envelope mr-2 text-sm"></i> info@medexpress.co.za</p>
+            </div>
+            <div>
+                <h4 class="text-xl font-bold mb-4">Location</h4>
+                <p class="text-gray-400">Serving Vosloorus, Katlehong, and Spruitview areas.</p>
+            </div>
+        </div>
+        <div class="container mx-auto text-center mt-8 text-gray-500 text-sm">
+            &copy; 2026 MedExpress. Designed for the community.
+        </div>
+    </footer>
 
-    function showDashboard() {
-      const user = getCurrentUser();
-      if (!user) return showPage('login');
-
-      document.getElementById('currentUser').textContent = user;
-      renderCompanies();
-      renderBookings();
-      showPage('dashboard');
-    }
-
-    // ────────────────────────────────────────────────
-    // Booking & Rating
-    // ────────────────────────────────────────────────
-    window.bookSlot = function(company) {
-      const slot = prompt(`Available slots:\n\n${slots.join('\n')}\n\nEnter desired slot:`, "");
-      if (!slot || !slots.includes(slot.trim())) {
-        alert("Invalid or cancelled slot selection.");
-        return;
-      }
-
-      const bookings = getBookings();
-      if (bookings.some(b => b.user === getCurrentUser() && b.slot === slot.trim())) {
-        alert("This slot is already booked by you.");
-        return;
-      }
-
-      bookings.push({ user: getCurrentUser(), company, slot: slot.trim(), date: new Date().toISOString() });
-      saveBookings(bookings);
-      renderBookings();
-      alert(`✓ Booked!\n${company} — ${slot.trim()}`);
-    };
-
-    window.rateCompany = function(company) {
-      const val = prompt(`Rate ${company} (1–5):`, "5");
-      const rating = parseInt(val);
-      if (isNaN(rating) || rating < 1 || rating > 5) {
-        alert("Please enter a number 1–5.");
-        return;
-      }
-
-      const ratings = getRatings();
-      const existing = ratings.find(r => r.user === getCurrentUser() && r.company === company);
-
-      if (existing) {
-        if (!confirm("Update previous rating?")) return;
-        existing.rating = rating;
-      } else {
-        ratings.push({ user: getCurrentUser(), company, rating, date: new Date().toISOString() });
-      }
-
-      saveRatings(ratings);
-      renderCompanies();
-      alert("Thank you for your rating!");
-    };
-
-    function showAlert(id, message) {
-      const el = document.getElementById(id);
-      el.textContent = message;
-      el.classList.remove('hidden');
-      setTimeout(() => el.classList.add('hidden'), 4500);
-    }
-
-    // ────────────────────────────────────────────────
-    // Start
-    // ────────────────────────────────────────────────
-    if (getCurrentUser()) {
-      showDashboard();
-    } else {
-      showPage('login');
-    }
-  </script>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
